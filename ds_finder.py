@@ -12,6 +12,8 @@ import pygame
 
 music_file = "1.mp3"   # mp3 or mid file
 
+chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+
 def alert():
     freq = 16000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
     bitsize = -16   # signed 16 bit. support 8,-8,16,-16
@@ -33,7 +35,7 @@ while True:
 
     # 소프라노
 
-    browser = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+    browser = webdriver.Chrome(chrome_path)
 
     browser.get('https://sofrano.com/product/list.html?cate_no=55')
 
@@ -53,7 +55,7 @@ while True:
 
     # 조이트론
 
-    browser2 = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+    browser2 = webdriver.Chrome(chrome_path)
 
     browser2.get('https://smartstore.naver.com/joytronstore/products/4872373481')
     try:
@@ -71,7 +73,7 @@ while True:
 
     # 엔엔마켓
 
-    browser3 = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+    browser3 = webdriver.Chrome(chrome_path)
 
     browser3.get('http://www.nnmarket.co.kr/shop/shopbrand.html?type=M&xcode=025&mcode=001')
 
