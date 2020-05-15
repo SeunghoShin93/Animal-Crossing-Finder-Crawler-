@@ -12,7 +12,12 @@ import pygame
 
 music_file = "1.mp3"   # mp3 or mid file
 
-chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+# Chrome_path 
+# 오딧세이
+# chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+# 데스크톱
+chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
+
 
 def alert():
     freq = 16000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
@@ -98,11 +103,13 @@ while True:
     finally:
         browser3.quit()
 
-    browser4 = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+    # yes 24 (이브이)
+
+    browser4 = webdriver.Chrome(chrome_path)
 
     browser4.get('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
 
-
+    
     try:
         title = WebDriverWait(browser4,  3) \
         .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
@@ -112,7 +119,7 @@ while True:
         if sold_out == '매진':
             print('구매 불가4')
         else:
-            print('예스24 ㄱㄱㄱㄱ')
+            print('예스24 인질셋 ㄱㄱㄱㄱ')
             alert()
             break
             
@@ -120,3 +127,28 @@ while True:
 
     finally:
         browser4.quit()
+
+    # yes 24 (일반)
+
+    browser5 = webdriver.Chrome(chrome_path)
+
+    browser5.get('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
+
+
+    try:
+        title = WebDriverWait(browser5,  3) \
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
+        
+        sold_out = title.text
+
+        if sold_out == '매진':
+            print('구매 불가5')
+        else:
+            print('예스24 단품 ㄱㄱㄱㄱ')
+            alert()
+            break
+            
+
+
+    finally:
+        browser5.quit()

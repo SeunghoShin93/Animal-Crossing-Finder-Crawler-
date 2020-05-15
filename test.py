@@ -16,7 +16,7 @@ music_file = "1.mp3"
 # while True:
 browser = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
 
-browser.get('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
+browser.get('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
 
 
 try:
