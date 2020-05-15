@@ -16,25 +16,23 @@ music_file = "1.mp3"
 # while True:
 browser = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
 
-browser.get('http://www.nnmarket.co.kr/shop/shopbrand.html?type=M&xcode=025&mcode=001')
+browser.get('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
 
 
 try:
     title = WebDriverWait(browser,  3) \
-    .until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'item-list')))
+    .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
+    
+    sold_out = title.text
 
-    # print(title.find_element)
-    success = 0
-    for item in title:
-        name = item.find_element(By.CLASS_NAME, 'prd-brand').text
-        if name == '닌텐도 스위치 동물의숲 에디션+ 포켓몬스터 이브이 몬스터볼 SET' or name == 'Nintendo Switch 모여봐요 동물의 숲 에디션' or name == '[스위치]닌텐도 스위치 모여봐요 동물의 숲 에디션+모여봐요 동물의 숲 + 도라에몽 진구의 목장이야기':
+    if sold_out == '매진':
+        print('구매 불가4')
+    else:
+        alert()
 
-            price = item.find_element(By.CLASS_NAME, 'prd-price').text
-            if price != 'Sold Out':
-                print('엔엔마켓 ㄱㄱㄱㄱ')
-                success = 1
-    if not success:
-        print('구매불가3')
+
+
+
 finally:
     browser.quit()
 

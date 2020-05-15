@@ -97,3 +97,26 @@ while True:
         print('구매 불가3')
     finally:
         browser3.quit()
+
+    browser4 = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+
+    browser4.get('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
+
+
+    try:
+        title = WebDriverWait(browser4,  3) \
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
+        
+        sold_out = title.text
+
+        if sold_out == '매진':
+            print('구매 불가4')
+        else:
+            print('예스24 ㄱㄱㄱㄱ')
+            alert()
+            break
+            
+
+
+    finally:
+        browser4.quit()
