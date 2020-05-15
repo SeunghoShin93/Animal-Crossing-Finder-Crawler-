@@ -22,7 +22,7 @@ def browser_form(domain):
     globals()['browser'+str(cnt)].get(domain)
     cnt += 1
 
-browser_form('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
+browser_form('https://smartstore.naver.com/joytronstore/category/0cdf08e497434eb4b46d4e039ef504d4?cp=1')
 
 # globals()['browser'+str(cnt)] = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
 
@@ -31,14 +31,15 @@ browser_form('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
 
 try:
     title = WebDriverWait(browser1,  3) \
-    .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
+    .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div/form/div[3]/ul/li[6]/div[3]')))
     
     sold_out = title.text
 
-    if sold_out == '매진':
-        print('구매 불가4')
-    else:
-        print('구매 가능')
+    print(sold_out)
+    # if sold_out == '매진':
+    #     print('구매 불가4')
+    # else:
+    #     print('구매 가능')
 
 
 

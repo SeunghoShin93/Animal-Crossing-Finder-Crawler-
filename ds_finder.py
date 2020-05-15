@@ -75,16 +75,18 @@ while True:
 
     # 조이트론
 
-    browser_form('https://smartstore.naver.com/joytronstore/products/4872373481')
+    browser_form('https://smartstore.naver.com/joytronstore/category/0cdf08e497434eb4b46d4e039ef504d4?cp=1')
     try:
         title = WebDriverWait(browser2,  3) \
-        .until(EC.presence_of_element_located((By.CLASS_NAME,  'buy')))
-        class_name = title.find_element_by_tag_name('a').get_attribute('class')
-        if class_name != '_stopDefault':
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div/form/div[3]/ul/li[1]/div[3]')))
+    
+        sold_out = title.text
+
+        if sold_out=='일시품절':
+            go('', False)
+        else:
             go('조이 트론 ㄱㄱㄱㄱ', True)
             break
-        else:
-            go('', False)
     finally:
         browser2.quit()
 
