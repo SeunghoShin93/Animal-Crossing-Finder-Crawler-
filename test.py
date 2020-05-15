@@ -10,17 +10,27 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import pygame
 
+chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
 
 music_file = "1.mp3"
-
+cnt = 1
 # while True:
-browser = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
 
-browser.get('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
+def browser_form(domain):
+    global cnt
+    globals()['browser'+str(cnt)] = webdriver.Chrome(chrome_path)
+    globals()['browser'+str(cnt)].get(domain)
+    cnt += 1
+
+browser_form('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
+
+# globals()['browser'+str(cnt)] = webdriver.Chrome("D:/Download/chromedriver_win32/chromedriver.exe")
+
+# globals()['browser'+str(cnt)].get('http://display.cjmall.com/p/item/64124263?channelCode=30001001#')
 
 
 try:
-    title = WebDriverWait(browser,  3) \
+    title = WebDriverWait(browser1,  3) \
     .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
     
     sold_out = title.text
@@ -28,13 +38,12 @@ try:
     if sold_out == '매진':
         print('구매 불가4')
     else:
-        alert()
-
+        print('구매 가능')
 
 
 
 finally:
-    browser.quit()
+    browser1.quit()
 
 
 def alert():
