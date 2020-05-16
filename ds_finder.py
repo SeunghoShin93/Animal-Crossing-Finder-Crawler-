@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 
 from selenium.webdriver.common.by import By
@@ -14,9 +12,9 @@ music_file = "1.mp3"   # mp3 or mid file
 
 # Chrome_path 
 # 오딧세이
-chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+# chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
 # 데스크톱
-# chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
+chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
 
 cnt = 1
 
@@ -155,4 +153,26 @@ while True:
 
     finally:
         browser5.quit()
+    
+    # 티몬
+
+    browser_form('http://www.tmon.co.kr/deal/1898373862?keyword=%EB%8B%8C%ED%85%90%EB%8F%84%EC%8A%A4%EC%9C%84%EC%B9%98&tl_area=SALDEAL&tl_ord=2&searchClick=DL%7CND%7CBM&thr=ma')
+
+    try:
+        title = WebDriverWait(browser6,  3) \
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
+        title2 = browser6.find_element_by_xpath('/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
+
+        sold_out = title.get_attribute('class')
+        sold_out2 = title2.get_attribute('class')
+
+        if sold_out != 'soldout' or sold_out2 != 'soldout':
+            go('티몬 ㄱㄱㄱㄱ', True)
+            break
+        else:
+            go('', False)
+    finally:
+        browser6.quit()
+    
+    
     cnt = 1
