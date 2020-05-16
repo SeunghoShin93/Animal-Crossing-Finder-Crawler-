@@ -14,9 +14,9 @@ music_file = "1.mp3"   # mp3 or mid file
 
 # Chrome_path 
 # 오딧세이
-# chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
 # 데스크톱
-chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
+# chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
 
 cnt = 1
 
@@ -111,7 +111,7 @@ while True:
     finally:
         browser3.quit()
 
-    # yes 24 (이브이)
+    # cjmall (이브이)
 
     browser_form('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
 
@@ -133,9 +133,9 @@ while True:
     finally:
         browser4.quit()
 
-    # yes 24 (일반)
+    # cjmall (일반)
 
-    browser_form('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
+    browser_form('http://display.cjmall.com/p/item/64124263?channelCode=30001001')
 
 
     try:
