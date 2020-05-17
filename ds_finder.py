@@ -9,16 +9,17 @@ from selenium.webdriver.support import expected_conditions as EC
 import pygame
 
 music_file = "1.mp3"   # mp3 or mid file
+error_file = "2.mp3"   # mp3 or mid file
 
 # Chrome_path 
 # 오딧세이
-# chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
+chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
 # 데스크톱
-chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
+# chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
 
 cnt = 1
 
-def alert():
+def alert(mfile):
     freq = 16000    # sampling rate, 44100(CD), 16000(Naver TTS), 24000(google TTS)
     bitsize = -16   # signed 16 bit. support 8,-8,16,-16
     channels = 1    # 1 is mono, 2 is stereo
@@ -26,7 +27,7 @@ def alert():
 
     # default : pygame.mixer.init(frequency=22050, size=-16, channels=2, buffer=4096)
     pygame.mixer.init(freq, bitsize, channels, buffer)
-    pygame.mixer.music.load(music_file)
+    pygame.mixer.music.load(mfile)
     pygame.mixer.music.play()
 
     clock = pygame.time.Clock()
@@ -46,7 +47,7 @@ def browser_form(domain):
 def go(location, result):
     if result:
         print(location)
-        alert()
+        alert(music_file)
     else:
         print('구매 불가 {}'.format(cnt-1))
 
@@ -68,6 +69,10 @@ while True:
         else:
             go('소프라노 ㄱㄱㄱ', True)
             break
+
+    except:
+        print('에러')
+        alert(error_file)
     finally:
         browser1.quit()
 
@@ -85,6 +90,9 @@ while True:
         else:
             go('조이 트론 ㄱㄱㄱㄱ', True)
             break
+    except:
+        print('에러')
+        alert(error_file)
     finally:
         browser2.quit()
 
@@ -106,6 +114,11 @@ while True:
                     break
         
         go('', False)
+
+    except:
+        print('에러')
+        alert(error_file)
+
     finally:
         browser3.quit()
 
@@ -125,7 +138,9 @@ while True:
         else:
             go('예스24 인질셋 ㄱㄱㄱㄱ',True)
             break
-            
+    except:
+        print('에러')
+        alert(error_file)            
 
 
     finally:
@@ -148,7 +163,9 @@ while True:
             go('예스24 단품 ㄱㄱㄱㄱ', True)
 
             break
-            
+    except:
+        print('에러')
+        alert(error_file)
 
 
     finally:
@@ -171,6 +188,9 @@ while True:
             break
         else:
             go('', False)
+    except:
+        print('에러')
+        alert(error_file)
     finally:
         browser6.quit()
     
