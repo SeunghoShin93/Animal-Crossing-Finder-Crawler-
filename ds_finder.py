@@ -177,8 +177,8 @@ while True:
 
     try:
         title = WebDriverWait(browser6,  3) \
-        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
-        title2 = browser6.find_element_by_xpath('/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[5]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
+        title2 = browser6.find_element_by_xpath('/html/body/div[5]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
 
         sold_out = title.get_attribute('class')
         sold_out2 = title2.get_attribute('class')

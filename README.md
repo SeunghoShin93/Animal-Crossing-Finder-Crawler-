@@ -24,7 +24,8 @@
 - pip install -r requirements.txt
 - 사용하는 chrome 버전에 맞춰 chromedriver 다운로드 - https://chromedriver.chromium.org/downloads
 
-
+- `ds_finder.py`  의  `chrome_path` 를 본인 컴퓨터의 `chromedriver.exe` 경로 수정 
+- Ready to go with `python ds_finder.py` 
 
 ## 기술 스택
 
@@ -59,6 +60,12 @@
   
 - tmon (1번 옵션, 2번 옵션)
 
+  - 간헐적으로 xpath가 바뀌어서 time exception error 가 발생한다. body/ 첫번째 div 인덱스가 바뀜 
+  
   
 
 ### 2020-05-16 21:39 기준 
+
+
+
+## 2020-05-18 0928 조이트론 알림으로 구매 완료 !
