@@ -21,11 +21,16 @@
 ## Getting Started
 
 - pip upgrade
+
 - pip install -r requirements.txt
+
 - 사용하는 chrome 버전에 맞춰 chromedriver 다운로드 - https://chromedriver.chromium.org/downloads
 
 - `ds_finder.py`  의  `chrome_path` 를 본인 컴퓨터의 `chromedriver.exe` 경로 수정 
+
 - Ready to go with `python ds_finder.py` 
+
+  
 
 ## 기술 스택
 
@@ -38,19 +43,27 @@
 
 - `python ds_finder.py` 로 실행
 
-- 사이트 별 재고 풀리는 걸 캐치
+- 사이트를 크롬으로 render 후 재고 품절 webelement 요소 캐치
   - pygame의 mixer로 음악을 재생하여 사용자에게 구매 가능 여부를 알린다.
   - 콘솔에 재고가 풀린 사이트를 print
-  - 사용자는 알림을 듣고 콘솔을 보고 재빠르게 해당 사이트에서 구매
+  - 사용자는 알림을 듣고 켜져 있는 웹사이트에서 구매
+  
 - 재고 없음 미 변동시
+  
+  - 자동으로 chrome 창 종료후 다음 사이트 render
   - 크롤링 과정 반복
-- `ctrl+l` 명령어로 끄지 않는 이상 상기 과정 반복
+  
+- `ctrl+c` 명령어로 끄지 않는 이상 상기 과정 반복
 
-## 지원하는 사이트 목록
+  
+
+## 지원하는 사이트 목록 
+
+단품 / 인질셋 모두 포함입니다.
 
 - 소프라노
 
-- 조이트론 스토어 (네이버 스마트 스토어)
+- 조이트론 스토어 (네이버 스마트 스토어) 
 
 - 엔엔마켓
 
@@ -62,10 +75,23 @@
 
   - 간헐적으로 xpath가 바뀌어서 time exception error 가 발생한다. body/ 첫번째 div 인덱스가 바뀜 
   
+
+
+
+## Tips
+
+- 재고 풀리는 시간이 랜덤입니다. 오전 8시부터 오후 6시~7시까지 켜두시길 권장합니다.
+
   
 
 ### 2020-05-16 21:39 기준 
 
 
 
-## 2020-05-18 0928 조이트론 알림으로 구매 완료 !
+
+
+
+
+
+
+## 2020-05-18 0928 조이트론 알림으로 인질셋 구매 완료 ! :joy: 
