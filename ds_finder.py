@@ -12,10 +12,7 @@ music_file = "1.mp3"   # mp3 or mid file
 error_file = "2.mp3"   # mp3 or mid file
 
 # Chrome_path 
-# 오딧세이
-chrome_path= "C:/Users/multicampus/Downloads/chromedriver_win32/chromedriver.exe"
-# 데스크톱
-# chrome_path= "D:/Download/chromedriver_win32/chromedriver.exe"
+chrome_path= "C:/Download/chromedriver_win32/chromedriver.exe"
 
 cnt = 1
 
