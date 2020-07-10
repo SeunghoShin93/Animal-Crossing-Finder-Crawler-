@@ -78,7 +78,7 @@ while True:
     browser_form('https://smartstore.naver.com/joytronstore/category/0cdf08e497434eb4b46d4e039ef504d4?cp=1')
     try:
         title = WebDriverWait(browser2,  3) \
-        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div/form/div[3]/ul/li[1]/div[3]')))
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div[2]/div/form/div[3]/ul/li[2]/div[3]')))
     
         sold_out = title.text
 
@@ -103,7 +103,7 @@ while True:
 
         for item in title:
             name = item.find_element(By.CLASS_NAME, 'prd-brand').text
-            if name == '닌텐도 스위치 동물의숲 에디션+ 포켓몬스터 이브이 몬스터볼 SET' or name == 'Nintendo Switch 모여봐요 동물의 숲 에디션' or name == '[스위치]닌텐도 스위치 모여봐요 동물의 숲 에디션+모여봐요 동물의 숲 + 도라에몽 진구의 목장이야기':
+            if name == '[스위치] Nintendo Switch 동물의 숲 에디션 본체 + 모여봐요 동물의숲 + 게임 1종 선택' or '닌텐도 스위치 동물의숲 에디션+ 포켓몬스터 이브이 몬스터볼 SET' or name == 'Nintendo Switch 모여봐요 동물의 숲 에디션' or name == '[스위치]닌텐도 스위치 모여봐요 동물의 숲 에디션+모여봐요 동물의 숲 + 도라에몽 진구의 목장이야기':
 
                 price = item.find_element(By.CLASS_NAME, 'prd-price').text
                 if price != 'Sold Out':
