@@ -55,13 +55,13 @@ while True:
 
     # 소프라노
 
-    browser_form('https://sofrano.com/product/list.html?cate_no=55')
+    browser_form('https://sofrano.com/product/detail.html?product_no=831&cate_no=55&display_group=1')
 
     try:
         title = WebDriverWait(browser1, 3) \
-        .until(EC.presence_of_element_located((By.CLASS_NAME, 'prdCount')))
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[4]/div/div/div[2]/div[2]/div[2]/div[6]/div[4]/div/div[4]/div[1]/a[3]')))
         result = title.text
-        if result == '2 ITEMS':
+        if result == '품 절':
             go('', False)
         else:
             go('소프라노 ㄱㄱㄱ', True)
@@ -119,63 +119,38 @@ while True:
     finally:
         browser3.quit()
 
-    # cjmall (이브이)
+    #  cjmall (이브이)
 
-    browser_form('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
+    # browser_form('http://display.cjmall.com/p/item/64095564?channelCode=30001001')
 
     
-    try:
-        title = WebDriverWait(browser4,  3) \
-        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
+    # try:
+    #     title = WebDriverWait(browser4,  3) \
+    #     .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
         
-        sold_out = title.text
+    #     sold_out = title.text
 
-        if sold_out == '매진':
-            go('', False)
-        else:
-            go('예스24 인질셋 ㄱㄱㄱㄱ',True)
-            break
-    except:
-        print('에러')
-        alert(error_file)            
-
-
-    finally:
-        browser4.quit()
-
-    # cjmall (일반)
-
-    browser_form('http://display.cjmall.com/p/item/64124263?channelCode=30001001')
+    #     if sold_out == '매진':
+    #         go('', False)
+    #     else:
+    #         go('예스24 인질셋 ㄱㄱㄱㄱ',True)
+    #         break
+    # except:
+    #     print('에러')
+    #     alert(error_file)            
 
 
-    try:
-        title = WebDriverWait(browser5,  3) \
-        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div/div[4]/div/div[2]/div[1]/div[2]/div[2]/div[2]/a')))
-        
-        sold_out = title.text
+    # finally:
+    #     browser4.quit()
 
-        if sold_out == '매진':
-            go('', False)
-        else:
-            go('예스24 단품 ㄱㄱㄱㄱ', True)
-
-            break
-    except:
-        print('에러')
-        alert(error_file)
-
-
-    finally:
-        browser5.quit()
-    
     # 티몬
 
     browser_form('http://www.tmon.co.kr/deal/1898373862?keyword=%EB%8B%8C%ED%85%90%EB%8F%84%EC%8A%A4%EC%9C%84%EC%B9%98&tl_area=SALDEAL&tl_ord=2&searchClick=DL%7CND%7CBM&thr=ma')
 
     try:
-        title = WebDriverWait(browser6,  3) \
-        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[5]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
-        title2 = browser6.find_element_by_xpath('/html/body/div[5]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[13]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
+        title = WebDriverWait(browser4,  3) \
+        .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
+        title2 = browser6.find_element_by_xpath('/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
 
         sold_out = title.get_attribute('class')
         sold_out2 = title2.get_attribute('class')
@@ -189,7 +164,7 @@ while True:
         print('에러')
         alert(error_file)
     finally:
-        browser6.quit()
+        browser4.quit()
     
     
     cnt = 1
