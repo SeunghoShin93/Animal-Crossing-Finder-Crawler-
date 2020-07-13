@@ -37,8 +37,10 @@ try:
     
     sold_out = title.text
     # sold_out2 = title2.get_attribute('class')
-
     print(sold_out)
+    if sold_out == '품 절':
+        purchase_page = webdriver.Chrome(chrome_path)
+        purchase_page.get('https://sofrano.com/product/detail.html?product_no=831&cate_no=55&display_group=1')
     # print(sold_out2)
 
 finally:
