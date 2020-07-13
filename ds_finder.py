@@ -12,7 +12,7 @@ music_file = "1.mp3"   # mp3 or mid file
 error_file = "2.mp3"   # mp3 or mid file
 
 # Chrome_path 
-chrome_path= "C:/Download/chromedriver_win32/chromedriver.exe"
+chrome_path= "D:\Download\chromedriver_win32 (1)\chromedriver.exe"
 
 cnt = 1
 
@@ -150,7 +150,7 @@ while True:
     try:
         title = WebDriverWait(browser4,  3) \
         .until(EC.presence_of_element_located((By.XPATH, '/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[1]')))
-        title2 = browser6.find_element_by_xpath('/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
+        title2 = browser4.find_element_by_xpath('/html/body/div[3]/div[2]/div/div/section[1]/section[1]/section[1]/div[3]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/ul/li[2]')
 
         sold_out = title.get_attribute('class')
         sold_out2 = title2.get_attribute('class')
