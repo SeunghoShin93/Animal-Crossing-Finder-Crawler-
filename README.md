@@ -29,7 +29,7 @@
 - `ds_finder.py`  의  `chrome_path` 를 본인 컴퓨터의 `chromedriver.exe` 경로 수정 
   (default: `"C:/Download/chromedriver_win32/chromedriver.exe"`)
 
-- Ready to go with `python ds_finder.py` 
+- `python ds_finder.py`  로 실행
 
   
 
@@ -46,22 +46,18 @@
 
 - 사이트를 크롬으로 render 후 재고 품절 여부를 결정짓는 webelement 요소 캐치
   - pygame으로 음악을 재생하여 사용자에게 구매 가능 여부를 알린다. (default music: 사이렌)
-  - 콘솔에 재고가 풀린 사이트를 print
-  - 사용자는 알림을 듣고 켜져 있는 웹사이트에서 구매!!
-  
-- 재고 없음 미 변동시
-  
-  - 자동으로 chrome 창 종료후 다음 사이트 render
+  - 재고 발생 시 : 터미널에 사이트 print
+  - 해당 도메인의 크롬 창이 켜짐
   
 - `ctrl+c` 명령어로 끄지 않는 이상 상기 과정 반복합니다.
 
-- 렌더링 에러 시 경적음 재생 (경험상 티몬에서 자주 발생)
+- 렌더링 에러 시 경적음 재생 (티몬에서 자주 발생)
 
   
 
 ## 지원하는 사이트 목록 
 
-단품 / 인질셋 모두 포함입니다.
+
 
 - `소프라노`
 
@@ -69,10 +65,6 @@
 
 - `엔엔마켓`
 
-- `cjmall`
-  - 인질
-  - 단품 
-  
 - `tmon (1번 옵션, 2번 옵션)`
 - 간헐적으로 xpath가 바뀌어서 time exception error 가 발생한다. body / 첫번째 div 인덱스가 바뀜 
   
@@ -99,8 +91,7 @@
 
 ## Updates
 
-- `조이트론` xpath 변경
-- 
+- cjmall 삭제 (재고 전무)
 
 
 
